@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="com.ddlab.pathxplorer.feature">
+      <category name="DDLAB PathXplorer"/>
+   </feature>
+   <category-def name="DDLAB PathXplorer" label="DDLAB PathXplorer">
+      <description>
+         An Artifact from Tornado Project by DDLAB Inc. PathXplorer is an Eclipse utility plugin which provides some basic functionalities for swift development.
+      </description>
+   </category-def>
+</site>

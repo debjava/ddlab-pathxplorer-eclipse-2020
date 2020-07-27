@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+ xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>com.ddlab.pathxplorer.feature</groupId>
+ <artifactId>com.ddlab.pathxplorer.feature</artifactId>
+ <name>com.ddlab.pathxplorer.feature</name>
+ <url>http://maven.apache.org</url>
+ <packaging>eclipse-feature</packaging>
+
+ <parent>
+  <groupId>ddlab-pathxplorer-eclipse-2020</groupId>
+  <artifactId>ddlab-pathxplorer-eclipse-2020</artifactId>
+  <version>1.3.0</version>
+ </parent>
+
+ <contributors>
+  <contributor>
+   <name>Debadatta Mishra</name>
+   <email>deba.java@gmail.com</email>
+   <organization>DDLAB Inc.</organization>
+   <roles>
+    <role>Technical Architect</role>
+   </roles>
+  </contributor>
+ </contributors>
+</project>

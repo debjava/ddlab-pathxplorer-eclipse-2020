@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.ddlab.pathxplorer.commands.category"
+            name="Commands Category">
+      </category>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Open in Explorer"
+            id="com.ddlab.pathxplorer.commands.openinxplorer">
+      </command>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Open in Windows Command"
+            id="com.ddlab.pathxplorer.commands.openincmd">
+      </command>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Zip To Desktop"
+            id="com.ddlab.pathxplorer.commands.ziptodesktop">
+      </command>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Copy Files and Folders"
+            id="com.ddlab.pathxplorer.commands.copyfilefolder">
+      </command>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Copy Files and Folders Names Only"
+            id="com.ddlab.pathxplorer.commands.copyfilefoldernames">
+      </command>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Copy Path (Windows Style)"
+            id="com.ddlab.pathxplorer.commands.copypathwinstyle">
+      </command>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Copy Path (Unix Style)"
+            id="com.ddlab.pathxplorer.commands.copypathunixstyle">
+      </command>
+      <command
+            categoryId="com.ddlab.pathxplorer.commands.category"
+            name="Send to Desktop"
+            id="com.ddlab.pathxplorer.commands.sendtodesktop">
+      </command>
+      
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.ddlab.pathxplorer.handlers.OpenInExplorerHandler"
+            commandId="com.ddlab.pathxplorer.commands.openinxplorer">
+      </handler>
+      <handler
+            class="com.ddlab.pathxplorer.handlers.OpenInCommandHandler"
+            commandId="com.ddlab.pathxplorer.commands.openincmd">
+      </handler>
+      <handler
+            class="com.ddlab.pathxplorer.handlers.ZipToDesktopHandler"
+            commandId="com.ddlab.pathxplorer.commands.ziptodesktop">
+      </handler>
+      <handler
+            class="com.ddlab.pathxplorer.handlers.CopyFileFolderHandler"
+            commandId="com.ddlab.pathxplorer.commands.copyfilefolder">
+      </handler>
+      <handler
+            class="com.ddlab.pathxplorer.handlers.CopyFileFolderNamesHandler"
+            commandId="com.ddlab.pathxplorer.commands.copyfilefoldernames">
+      </handler>
+      <handler
+            class="com.ddlab.pathxplorer.handlers.WindowsStyleCopyHandler"
+            commandId="com.ddlab.pathxplorer.commands.copypathwinstyle">
+      </handler>
+      <handler
+            class="com.ddlab.pathxplorer.handlers.UnixStyleCopyHandler"
+            commandId="com.ddlab.pathxplorer.commands.copypathunixstyle">
+      </handler>
+      <handler
+            class="com.ddlab.pathxplorer.handlers.SendToDesktopHandler"
+            commandId="com.ddlab.pathxplorer.commands.sendtodesktop">
+      </handler>
+      
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?before=import">
+         <menu
+               icon="icons/xplore20.png"
+               id="com.ddlab.pathxplorer.menus.sampleMenu"
+               label="PathXplorer">
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.openinxplorer"
+                  icon="icons/folder16.png"
+                  id="com.ddlab.pathxplorer.menus.openinxplorer"
+                  label="Open In Explore">
+            </command>
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.openincmd"
+                  icon="icons/cmd16.png"
+                  id="com.ddlab.pathxplorer.menus.openinxcmd"
+                  label="Open In Command Prompt">
+            </command>
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.ziptodesktop"
+                  icon="icons/zip16.png"
+                  id="com.ddlab.pathxplorer.menus.ziptodesktop"
+                  label="Zip To Desktop">
+            </command>
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.copyfilefolder"
+                  icon="icons/copy16.png"
+                  id="com.ddlab.pathxplorer.menus.copyfilefolder"
+                  label="Copy Files and Folders">
+            </command>
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.copyfilefoldernames"
+                  icon="icons/copyNames16.png"
+                  id="com.ddlab.pathxplorer.menus.copyfilefoldernames"
+                  label="Copy Files and Folders Names Only">
+            </command>
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.copypathwinstyle"
+                  icon="icons/pastewin16.png"
+                  id="com.ddlab.pathxplorer.commands.copypathwinstyle"
+                  label="Copy Path (Windows Style)">
+            </command>
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.copypathunixstyle"
+                  icon="icons/pasteunix16.png"
+                  id="com.ddlab.pathxplorer.menus.copypathunixstyle"
+                  label="Copy Path (Unix Style)">
+            </command>
+            <command
+                  commandId="com.ddlab.pathxplorer.commands.sendtodesktop"
+                  icon="icons/desktop16.png"
+                  id="com.ddlab.pathxplorer.menus.copypathunixstyle"
+                  label="Send To Desktop">
+                  <visibleWhen
+				       checkEnabled="false">
+				   <with variable="activeMenuSelection">
+				      <iterate
+				           ifEmpty="false">
+				         <adapt type="org.eclipse.core.resources.IFile">
+				              <!-- <test property="org.eclipse.core.resources.extension" value="art" /> -->
+				         </adapt>
+				      </iterate>
+				   </with>
+				</visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.console.ConsoleView?after=additions">
+		 <command 
+			commandId="com.ddlab.pathxplorer.commands.openincmd" 
+			icon="icons/cmd16.png" 
+			style="push" />
+	  </menuContribution>
+	  <menuContribution locationURI="toolbar:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+		 <command 
+			commandId="com.ddlab.pathxplorer.commands.copyfilefolder" 
+			icon="icons/copy16.png" 
+			style="push" />
+	  </menuContribution>
+	  <menuContribution locationURI="toolbar:org.eclipse.ui.views.ResourceNavigator?after=additions">
+		 <command 
+			commandId="com.ddlab.pathxplorer.commands.copyfilefolder" 
+			icon="icons/copy16.png" 
+			style="push" />
+	  </menuContribution>
+	  <menuContribution locationURI="toolbar:org.eclipse.ui.navigator.ProjectExplorer?after=additions">
+		 <command 
+			commandId="com.ddlab.pathxplorer.commands.copyfilefolder" 
+			icon="icons/copy16.png" 
+			style="push" />
+	  </menuContribution>
+   </extension>
+
+</plugin>

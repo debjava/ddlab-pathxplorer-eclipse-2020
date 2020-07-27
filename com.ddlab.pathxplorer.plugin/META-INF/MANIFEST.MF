@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PathXplorer
+Bundle-SymbolicName: com.ddlab.pathxplorer.plugin;singleton:=true
+Bundle-Version: 1.3.0
+Bundle-Activator: com.ddlab.pathxplorer.Activator
+Bundle-Vendor: DDLAB INC PathXplorer
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.debug.core,
+ org.eclipse.ui.externaltools,
+ org.eclipse.ui.views
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.ddlab.pathxplorer.plugin
+Bundle-ActivationPolicy: lazy
